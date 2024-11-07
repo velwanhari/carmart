@@ -4,6 +4,8 @@
  */
 package ejb;
 
+import entities.Dealer;
+import java.util.Collection;
 import javax.ejb.Local;
 
 /**
@@ -12,5 +14,18 @@ import javax.ejb.Local;
  */
 @Local
 public interface adminBeanLocal {
+
+    /*  ==== dealer table ====    */
+    void addDealer(String name, String address, String phonenumber, String email);
+
+    void updateDealer(Integer id, String name, String address, String phonenumber, String email);
+
+    void deleteDealer(Integer id);
+
+    Dealer findDealerById(Integer id);
+    Dealer findDealerByName(String name);
     
+    
+    Collection<Dealer> getAllDealers();
+
 }
